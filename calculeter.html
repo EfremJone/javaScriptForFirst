@@ -94,7 +94,7 @@
       <div class="col col-mb-3 d-grid">
           <div class="row ">
             <div class="col d-grid p-1">
-              <button type="button" class="btn btn-primary">=</button>
+              <button type="button" class="btn btn-primary" onclick="result()">=</button>
             </div>
           </div>
       </div>
@@ -219,10 +219,56 @@
       }
       function result()
       {
-        document.getElementById("textArea").row1;
+        existValue=document.getElementById("textArea").value;
+        for(i=0; i<=existValue.length; i++)
+        {
+          if (existValue[i]==="+")
+          {
+            
+            var n1=parseInt(existValue.substring(0,i));
+            var n2=parseInt(existValue.substring(i+1,existValue.length));
+            var res=n1+n2;
+            document.getElementById("textArea").value=res;
+          }
+          else if (existValue[i]==="-")
+          {
+            
+            var n1=parseInt(existValue.substring(0,i));
+            var n2=parseInt(existValue.substring(i+1,existValue.length));
+            var res=n1-n2;
+            document.getElementById("textArea").value=res;
+          }
+          else if (existValue[i]==="*")
+          {
+            
+            var n1=parseInt(existValue.substring(0,i));
+            var n2=parseInt(existValue.substring(i+1,existValue.length));
+            var res=n1*n2;
+            document.getElementById("textArea").value=res;
+          }
+          else if (existValue[i]==="/")
+          {
+            
+            var n1=parseInt(existValue.substring(0,i));
+            var n2=parseInt(existValue.substring(i+1,existValue.length));
+            var res=n1/n2;
+            document.getElementById("textArea").value=res;
+          }
+          else if (existValue[i]==="%")
+          {
+            
+            var n1=parseInt(existValue.substring(0,i));
+            var n2=parseInt(existValue.substring(i+1,existValue.length));
+            var res=n1%n2;
+            document.getElementById("textArea").value=res;
+          }
+          
+        }
+        
       }
+ 
     </script>
-  
+ 
   </body>
 
 </html>
